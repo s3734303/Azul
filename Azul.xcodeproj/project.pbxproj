@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		372C73A024836C62008DA129 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 372C739F24836C62008DA129 /* main.cpp */; };
+		372C73B124836C9A008DA129 /* Menu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 372C73A924836C9A008DA129 /* Menu.cpp */; };
+		372C73B224836C9A008DA129 /* PlayerBoard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 372C73AA24836C9A008DA129 /* PlayerBoard.cpp */; };
+		372C73B324836C9A008DA129 /* Types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 372C73AC24836C9A008DA129 /* Types.cpp */; };
+		372C73B424836C9A008DA129 /* PlayGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 372C73AF24836C9A008DA129 /* PlayGame.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +29,17 @@
 /* Begin PBXFileReference section */
 		372C739C24836C62008DA129 /* Azul */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Azul; sourceTree = BUILT_PRODUCTS_DIR; };
 		372C739F24836C62008DA129 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		372C73A624836C9A008DA129 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		372C73A724836C9A008DA129 /* PlayerBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerBoard.h; sourceTree = "<group>"; };
+		372C73A824836C9A008DA129 /* PlayGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayGame.h; sourceTree = "<group>"; };
+		372C73A924836C9A008DA129 /* Menu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Menu.cpp; sourceTree = "<group>"; };
+		372C73AA24836C9A008DA129 /* PlayerBoard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerBoard.cpp; sourceTree = "<group>"; };
+		372C73AB24836C9A008DA129 /* LinkedList.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LinkedList.hpp; sourceTree = "<group>"; };
+		372C73AC24836C9A008DA129 /* Types.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Types.cpp; sourceTree = "<group>"; };
+		372C73AD24836C9A008DA129 /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
+		372C73AE24836C9A008DA129 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		372C73AF24836C9A008DA129 /* PlayGame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayGame.cpp; sourceTree = "<group>"; };
+		372C73B024836C9A008DA129 /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Menu.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +72,17 @@
 		372C739E24836C62008DA129 /* Azul */ = {
 			isa = PBXGroup;
 			children = (
+				372C73AE24836C9A008DA129 /* LICENSE */,
+				372C73AB24836C9A008DA129 /* LinkedList.hpp */,
+				372C73A924836C9A008DA129 /* Menu.cpp */,
+				372C73B024836C9A008DA129 /* Menu.h */,
+				372C73AA24836C9A008DA129 /* PlayerBoard.cpp */,
+				372C73A724836C9A008DA129 /* PlayerBoard.h */,
+				372C73AF24836C9A008DA129 /* PlayGame.cpp */,
+				372C73A824836C9A008DA129 /* PlayGame.h */,
+				372C73A624836C9A008DA129 /* README.md */,
+				372C73AC24836C9A008DA129 /* Types.cpp */,
+				372C73AD24836C9A008DA129 /* Types.h */,
 				372C739F24836C62008DA129 /* main.cpp */,
 			);
 			path = Azul;
@@ -119,7 +145,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				372C73B124836C9A008DA129 /* Menu.cpp in Sources */,
+				372C73B424836C9A008DA129 /* PlayGame.cpp in Sources */,
+				372C73B224836C9A008DA129 /* PlayerBoard.cpp in Sources */,
 				372C73A024836C62008DA129 /* main.cpp in Sources */,
+				372C73B324836C9A008DA129 /* Types.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

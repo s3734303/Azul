@@ -1,15 +1,20 @@
-//
-//  main.cpp
-//  Azul
-//
-//  Created by Home on 5/31/20.
-//  Copyright © 2020 3734303. All rights reserved.
-//
+#include "LinkedList.hpp"
+#include "PlayerBoard.h"
+#include "PlayGame.h"
+#include "Menu.h"
+#include "Types.h"
+#include <list>
+#include <vector>
 
-#include <iostream>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
-}
+
+
+int main(void){
+    
+    Menu *menu = new Menu();
+    menu->display();
+
+
+//!end
+return 0;
+};
