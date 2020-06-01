@@ -14,6 +14,7 @@ char enumToChar(tile t){
         case U: return 'U';
         case L: return 'L';
         case B: return 'B';
+        case C: return 'C';
         case F: return 'F';
         case E: return '.';
         case X: return ' ';
@@ -28,6 +29,7 @@ tile charToEnum(char c){
         case 'U': return U;
         case 'L': return L;
         case 'B': return B;
+        case 'C': return C;
         case 'F': return F;
         case '.': return E;
         default: throw 3;
@@ -35,15 +37,14 @@ tile charToEnum(char c){
 }
 string enumToDisplay(tile t){
     switch (t) {
-        case Y: return "♠️";
+        case Y: return "🟨";
         case R: return "🟥";
         case U: return "⬛️";
-        case L: return "⬜️";
+        case L: return "🟩";
         case B: return "🟦";
+        case C: return "🟫";
         case F: return "1️⃣";
-        case E: return ".";
-        case X: return " ";
-        
-        
+        case E: return "🔲";
+        case X: return "🔳";
     }
 }

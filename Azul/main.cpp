@@ -10,7 +10,6 @@
 
 
 int main(void){
-    
     Menu *menu = new Menu();
     menu->display();
 

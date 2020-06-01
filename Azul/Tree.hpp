@@ -8,7 +8,7 @@
 
 #ifndef tree_hpp
 #define tree_hpp
-
+#include <cassert>
 #include <stdio.h>
 template <typename T>
 class Tree{
@@ -34,10 +34,7 @@ class Tree{
     int size{0};
     public:
     
-    Tree(const T& value,int key){
-        root= new Node(value,key);
-        size=1;
-    };
+    Tree()=default;
     ~Tree()
     {
     }
@@ -52,6 +49,9 @@ class Tree{
     }
      
     void add(const T& value,int key){
+        if(root==nullptr)
+            root = new Node(value,key);
+        return;
         Node* header = root;
         bool run = true;
         while((header->HasLeft() || header->HasRight()) && run) {
@@ -62,7 +62,6 @@ class Tree{
                     header->Right = new Node(value,key);
                     run = false;
                 }
-                    
             }
             else{
                 if(header->HasLeft())
@@ -71,10 +70,15 @@ class Tree{
                     header->Left = new Node(value,key);
                     run=false;
                 }
-                    
             }
         }
         size++;
+    }
+    T getLargest(){
+        Node* header = root;
+        while(header->HasRight())
+            header=header->Right;
+        return header->Data;
     }
 
 };

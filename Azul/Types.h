@@ -1,11 +1,8 @@
 #ifndef __TYPES__H__
 #define __TYPES__H__
 
-enum tile {B,Y,R,U,L,F,E,X};
-#define DIM 5
-#define p_size 15
-#define f_size 7
-typedef char Wall[DIM][DIM];
+enum tile {B,Y,R,U,L,C,F,E,X};
+
 
 
 #include <list>

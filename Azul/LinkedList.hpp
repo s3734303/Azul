@@ -7,67 +7,68 @@
 
 template <typename T>
 class LinkedList {
- private:
+    private:
   
-  struct Node {
-    Node* Next{nullptr};
-    T     Data{};
-    friend class LinkedList;
+    struct Node {
+        Node* Previous{nullptr};
+        Node* Next{nullptr};
+        T     Data{};
+        friend class LinkedList;
 
-    // Create a default empty node
-    Node() = default;
+        // Create a default empty node
+        Node() = default;
 
-    // Create a node storing input data
-    explicit Node(const T& data)
-      : Data{data} {}
+        // Create a node storing input data
+        explicit Node(const T& data)
+        : Data{data} {}
 
-    // Create a node storing input data, and pointing to another node
-    Node(const T& data, Node* next)
-      : Data{data}, Next{next} {}
-
-
-  }; 
-
-  Node* m_head{nullptr};
-  int   m_count{0};
-
-  // Ban copy
-  LinkedList(const LinkedList&) = delete;
-  LinkedList& operator=(const LinkedList&) = delete;
+        // Create a node storing input data, and pointing to another node
+        Node(const T& data, Node* next)
+        : Data{data}, Next{next} {}
 
 
- public:
+    };
 
-  typedef Node* Position;
+    Node* m_head{nullptr};
+    int   m_count{0};
 
-  LinkedList() = default;
+    // Ban copy
+    LinkedList(const LinkedList&) = delete;
+    LinkedList& operator=(const LinkedList&) = delete;
 
-  ~LinkedList() {
-    Clear();
-  }
 
-  int Count() const {
-    return m_count;
-  }  
+    public:
 
-  bool IsEmpty() const {
-    return (m_count == 0);
-  }
+    typedef Node* Position;
 
-  void Clear() {
-    while (! IsEmpty()) {
-      RemoveHead();
+    LinkedList() = default;
+
+    ~LinkedList() {
+        Clear();
     }
-  }
+
+    int Count() const {
+        return m_count;
+    }
+
+    bool IsEmpty() const {
+        return (m_count == 0);
+    }
+
+    void Clear() {
+        while (! IsEmpty()) {
+          RemoveHead();
+        }
+    }
  
   void InsertHead(const T& value) {
     Node* node = new Node{value};
 
     // Replace current head with new node
-    node->Next = m_head;
-    m_head = node;
-
-    ++m_count;
+      node->Next = m_head;
+//      node->Next->Previous=node;
+      m_head = node;
+      ++m_count;
   }
 
   void RemoveHead() {
@@ -150,7 +151,7 @@ class LinkedList {
 
     // For each node:
     Node* node = list.m_head;
-    while (node != nullptr) { 
+    while (node != nullptr) {
       // Print data stored in current node
       os << node->Data;
 
@@ -158,7 +159,7 @@ class LinkedList {
       node = node->Next;
     }
     return os;
-  } 
+  }
 
   void getAll(std::vector<tile> &bag)
   {
@@ -167,8 +168,8 @@ class LinkedList {
     while (i != Count())
     {
         bag.push_back(current -> Data);
-        current = current->Next; 
-        i++;   
+        current = current->Next;
+        i++;
     }
     
   }

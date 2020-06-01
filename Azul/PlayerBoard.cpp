@@ -3,7 +3,6 @@
 PlayerBoard::PlayerBoard(std::string playerName)
 {
     this->playerName = playerName;
-    
     for(int i=0;i<DIM;i++){
         for(int j=0;j<DIM;j++){
             wall[i][j]='.';
@@ -12,13 +11,11 @@ PlayerBoard::PlayerBoard(std::string playerName)
         for(int k =0;k<=i;k++)
             pile[i][k]=E;
     }
-    
-    
-}
-PlayerBoard::~PlayerBoard()
-{
 }
 
+PlayerBoard::~PlayerBoard(){
+    
+}
 
 void PlayerBoard::setScore(int s)
 {
@@ -204,15 +201,28 @@ bool PlayerBoard::checkforTile(char position)
 
 
 
-string PlayerBoard::display(){
+vector<string> PlayerBoard::display(){
+    vector<string> out;
     string display_str;
-    char pile_display[DIM][DIM];
+    string pile_display[DIM][DIM];
+    string wall_display[DIM][DIM];
+
+    for(int i=0;i<DIM;i++){
+        for(int j=0;j<DIM;j++){
+            wall_display[i][j]=enumToDisplay(charToEnum(wall[i][j]));
+                
+        }
+    }
+    
     char buff[4];
     
-    display_str.append("Mosiac For " + playerName + ":\n");
+    display_str=("Mosiac For " + playerName);
+    while(display_str.length()<40) display_str.push_back(' ');
+    out.push_back(display_str);
+    display_str.clear();
     for(int i =0;i<DIM;i++){
         for(int j =0;j<DIM;j++){
-            pile_display[i][j]=enumToChar(pile[i][j]);
+            pile_display[i][j]=enumToDisplay(pile[i][j]);
         }
             
     }
@@ -220,26 +230,29 @@ string PlayerBoard::display(){
         sprintf(buff, "%d: ",i+1);
         display_str.append(buff);
         for(int j =DIM-1;j>=0;j--){
-            display_str.push_back(pile_display[i][j]);
+            display_str.append(pile_display[i][j]);
             display_str.push_back(' ');
         }
         display_str.append("||");
         for(int j =0;j<DIM;j++){
             display_str.push_back(' ');
-            display_str.push_back(wall[i][j]);
+            display_str.append(wall_display[i][j]);
             display_str.push_back(' ');
 
         }
-        display_str.append("\n");
+        out.push_back(display_str);
+        display_str.clear();
     }
-    display_str.append("broken: ");
-    for(tile t : floorLine){
-        display_str.push_back(enumToChar(t));
-        display_str.push_back(' ');
-    }
+//    display_str.append("broken: ");
+//    for(tile t : floorLine){
+//        display_str.append(enumToDisplay(t));
+//        //display_str.push_back(' ');
+//    }
+//    while(display_str.length()<40) display_str.push_back(' ');
+//    out.push_back(display_str);
+    //out.push_back("\nY:🟨 R:🟥 U:⬛️ L:🟩 B:🟦\n");
     
-    
-    return display_str;
+    return out;
 }
 
 void PlayerBoard::moveTilesToPiles(vector<tile> picked, int noOfTiles, int pileNo)
@@ -359,9 +372,9 @@ void PlayerBoard::loader(string wall_str,string pile_str,string floor_str){
                     if((i+k)%DIM==j && wall[i][j]!=enumToChar(static_cast<tile>(k)))
                         throw 5;
             }
-            for(tile t : pile[i])
-                if(enumToChar(t)==wall[i][j] && wall[i][j]!='.')
-                    throw 5;
+//            for(tile t : pile[i])
+//                if(enumToChar(t)==wall[i][j] && wall[i][j]!='.')
+//                    throw 5;
         }
     }
     int c=0;

@@ -3,10 +3,10 @@
 #include <random>
 #include <regex> 
 #include <cstring>
-
-using namespace std;
+#include "Tree.hpp"
 PlayGame::PlayGame()
 {
+    players = new vector<PlayerBoard>;
 }
 PlayGame::~PlayGame()
 {
@@ -14,27 +14,43 @@ PlayGame::~PlayGame()
 
 void PlayGame::playerSetup(string player1, string player2)
 {
-    player[0] = new PlayerBoard(player1);
-    player[1] = new PlayerBoard(player2);    
+    if(!extendMode){
+        players->push_back(PlayerBoard(player1));
+        players->push_back(PlayerBoard(player2));
+    }
+    else{
+        players->push_back(PlayerBoard(player1));
+        players->push_back(PlayerBoard(player2));
+    }
 }
 
 
 void PlayGame::showPlayersBoard(int x)
 {
-    cout << factoryToString();
-    cout << player[x]->display();
-    string input;
-    cout << "\n> ";
-    getline(cin, input);
-    regex r("^turn\\s[012345]\\s[FRYBLU]\\s[12345]");
-    regex s("^save");
-    regex h("^help");
+    std::cout << factoryToString();
+    for(int i =0;i<players->at(x).display().size();i++){
+        for(PlayerBoard player :*players){
+            std::cout<<player.display().at(i);
+            std::cout<< "\t";
+        }
+        std::cout<<endl;
+    }
+    std::cout<<"broken";
+    for(tile t : players->at(x).getFloorLine())
+        std::cout<<enumToDisplay(t);
+    std::cout<<endl;
+    std::string input;
+    std::cout << "\n> ";
+    std::getline(cin, input);
+    std::regex r("^turn\\s[012345]\\s[FRYBLU]\\s[12345]");
+    std::regex s("^save");
+    std::regex h("^help");
     if (regex_match(input.begin(), input.end(), r)) 
     {
-        regex ws_re("\\s+");
+        std::regex ws_re("\\s+");
 
         vector<std::string> usr_in {
-        sregex_token_iterator(input.begin(), input.end(), ws_re, -1), {}
+        std::sregex_token_iterator(input.begin(), input.end(), ws_re, -1), {}
         };
         std::vector<char> cstr(usr_in[2].c_str(), usr_in[2].c_str() +usr_in[2].size() + 1);
 
@@ -42,7 +58,7 @@ void PlayGame::showPlayersBoard(int x)
         int tile_c = cstr[0];
         int pile_no = stoi(usr_in[3]);
 
-        player[x]->addToPiles(fac_no, tile_c, pile_no, factories);
+        players->at(x).addToPiles(fac_no, tile_c, pile_no, factories);
 
     } else if(regex_search(input, s, std::regex_constants::match_continuous))
     {
@@ -53,8 +69,8 @@ void PlayGame::showPlayersBoard(int x)
     else if(regex_search(input, h, std::regex_constants::match_continuous)){
         cout<<"usage:"<<endl;
         cout<<"turn <Factory Number> <tile> <storage number>"<< endl;
-        cout<<"save game"<<endl;
         cout<<"savegame <filename>"<<endl;
+        
     }
     else 
     {
@@ -68,15 +84,13 @@ void PlayGame::showPlayersBoard(int x)
     
 void PlayGame::wallTiling()
 {
-    endGame = player[0]->tilingPhase();
-    addToBoxLid(player[0]->discarded_pile());
-    player[0]->calcFloorLine();
-    addToBoxLid(player[0]->getFloorLine());
-
-    endGame = player[1]->tilingPhase();
-    addToBoxLid(player[1]->discarded_pile());
-    player[1]->calcFloorLine();
-    addToBoxLid(player[1]->getFloorLine());
+    for(int i=0;i<players->size();i++){
+        endGame = players->at(i).tilingPhase();
+        addToBoxLid(players->at(i).discarded_pile());
+        players->at(i).calcFloorLine();
+        addToBoxLid(players->at(i).getFloorLine());
+    }
+    
 }
 
 void PlayGame::play(bool newGame)
@@ -89,17 +103,12 @@ void PlayGame::play(bool newGame)
     cin.clear();
     cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
     int counter = 0;
+    //int turn =0;
     while(!s_check && !endGame)
     {
         while(!s_check && f_check() != true)
         { 
-            if(counter % 2 == 0)
-            {
-                showPlayersBoard(0);
-            }else
-            {
-                showPlayersBoard(1);
-            }
+            showPlayersBoard(counter%players->size());
             counter++;
         }
         if(!s_check)
@@ -111,22 +120,15 @@ void PlayGame::play(bool newGame)
     }
     if(!s_check)
     {
-    player[0]->endGameScoring();
-    player[1]->endGameScoring(); 
+        Tree<PlayerBoard> *scoresCompare = new Tree<PlayerBoard>();
+        for(PlayerBoard player :*players){
+            player.endGameScoring();
+            scoresCompare->add(player, player.getfinalScores());
+        }
 
-    int pA_score = player[0]->getfinalScores();
-    int pB_score = player[0]->getfinalScores();
     
-    printf("=== GAME OVER ===");
-
-    if(pA_score > pB_score)
-    {
-        cout << player[0]->getPlayerName() << "Wins the game" << endl;
-    }
-    else
-    {
-        cout << player[1]->getPlayerName() << "Wins the game" << endl;
-    }
+        printf("=== GAME OVER ===");
+        cout << scoresCompare->getLargest().getPlayerName() << "Wins the game" << endl;
     }
 }
 
@@ -140,7 +142,7 @@ string PlayGame::factoryToString(){
         display_str.append(buff);
         for(tile t : factory){
             display_str.push_back(' ');
-            display_str.push_back(enumToChar(t));
+            display_str.append(enumToDisplay(t));
         }
         display_str.append("\n");
         i++;
@@ -150,11 +152,21 @@ string PlayGame::factoryToString(){
 }
 //fill Bag with 100 tiles (20 of each color) and shuffle
 void PlayGame::initialBagfilling(){
-    for(int i = 0; i < tile::F; i++){
-        for(int j=0; j<20; j++){
-            bag.push_back(static_cast<tile>(i));
+    if(!extendMode){
+        for(int i = 0; i < tile::C; i++){
+            for(int j=0; j<20; j++){
+                bag.push_back(static_cast<tile>(i));
+            }
         }
     }
+    else{
+        for(int i = 0; i < tile::F; i++){
+            for(int j=0; j<20; j++){
+                bag.push_back(static_cast<tile>(i));
+            }
+        }
+    }
+    
     std::shuffle(bag.begin(), bag.end(), std::mt19937{std::random_device{}()});
 }
 
@@ -240,9 +252,10 @@ std::ostream& operator<<(std::ostream& os, const vector<T>& v)
 
 void PlayGame::saveGame(string filename)
 {
-    ofstream NewSave(filename);
-    NewSave << player[0]->toString();
-    NewSave << player[1]->toString();
+    std::ofstream NewSave(filename);
+    for(PlayerBoard player : *players){
+        NewSave << player.toString();
+    }
     for(vector<tile> factory : factories){
         NewSave << "#FACTORY\n";
         for(tile t :factory)
@@ -262,6 +275,11 @@ void PlayGame::saveGame(string filename)
         NewSave << boxLid;
     }
     NewSave.close();
+    boxLid.Clear();
+    bag.clear();
+    players=nullptr;
+    factories.clear();
+    
 }
 
 
@@ -277,7 +295,7 @@ bool PlayGame::loadGame(string filename)
             throw 0;
         if(pn>1)
             throw 5;
-        ifstream SaveGame(filename);
+        std::ifstream SaveGame(filename);
         while(SaveGame.peek()!=EOF){
             getline(SaveGame, parse);
             if(parse == "#COMMENT"){
@@ -313,7 +331,7 @@ bool PlayGame::loadGame(string filename)
             else if(parse == "#PLAYER_SCORE"){
                 getline(SaveGame,score_Str);
                 for(char c : score_Str)
-                    if(!isdigit(c))
+                    if(!isdigit(c) && c!='-')
                         throw 5;
                 score =atoi(score_Str.c_str());
                 if(score>100)
@@ -322,9 +340,9 @@ bool PlayGame::loadGame(string filename)
             else if(parse == "#PLAYER_END"){
                 if(playerName.empty() || pile_str.empty() || wall_str.empty())
                     throw 5;
-                player[pn] = new PlayerBoard(playerName);
-                player[pn]->loader(wall_str, pile_str, floor_str);
-                player[pn]->setScore(score);
+                players->push_back(PlayerBoard(playerName));
+                players->at(players->size()-1).loader(wall_str, pile_str, floor_str);
+                players->at(players->size()-1).setScore(score);
                 playerName.clear();
                 pile_str.clear();
                 wall_str.clear();
@@ -341,7 +359,6 @@ bool PlayGame::loadGame(string filename)
                         for(char c : factory_str){
                             if(c!='F' || factories.size()<1)
                                 factory->push_back(charToEnum(c));
-                            
                             else    throw 4;
                         }
                     }
@@ -372,13 +389,13 @@ bool PlayGame::loadGame(string filename)
             else if (parse == "#BOXLID"){
                 getline(SaveGame,boxLid_str);
                 for(char c : boxLid_str){
-                    if(c=='F')  throw 1;
-                    boxLid.InsertHead(charToEnum(c));
+                    if(int(c)==F)  throw 1;
+                    boxLid.InsertHead(static_cast<tile>(int(c)));
                 }
             }
             else    throw 2;
         }
-        if(pn!=2)   throw 5;
+        if(pn<2)   throw 5;
         if(f!=1)    throw 1;
         SaveGame.close();
         return true;
@@ -420,3 +437,6 @@ bool PlayGame::f_check()
     else {return false;}
 }
 
+void PlayGame::setExtendMode(){
+    extendMode = true;
+}

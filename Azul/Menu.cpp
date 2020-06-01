@@ -18,9 +18,10 @@ int Menu::read_input()
         std::cout << "\nMenu" << std::endl;
         cout << "-----"<< endl;
         cout << "1. New Game" << endl;
-        cout << "2. Load Game" << endl;
-        cout << "3. Credits" << endl;
-        cout << "4. Quit" << endl;
+        cout << "2. New Game(Xtend Mode)" << endl;
+        cout << "3. Load Game" << endl;
+        cout << "4. Credits" << endl;
+        cout << "5. Quit" << endl;
         cout << endl;
 
     
@@ -66,8 +67,26 @@ void Menu::display(){
                 
             input = read_input();
         }
-
         else if (input == 2)
+        {
+            play->setExtendMode();
+            printf("Starting a New Game(Xtend Mode)\n");
+            printf("Enter a name for player 1\n");
+            std::cin >> player1;
+            printf("Enter a name for player 2\n");
+            std::cin >> player2;
+            printf("\n");
+            printf("Let’s Play!\n");
+            printf("\n");
+            printf("=== Start Round ===\n");
+            
+            play->playerSetup(player1, player2);
+            play->play(true);
+                
+            input = read_input();
+        }
+
+        else if (input == 3)
         {
             cout << "Enter the filename from which to load a game" << "\n";
             std::cin >> filename;
@@ -83,7 +102,7 @@ void Menu::display(){
 
         }
 
-        else if (input == 3)
+        else if (input == 4)
         {
             cout << "----------------------------------"
                     "\nName: <Abida Mohammadi>"
@@ -104,7 +123,7 @@ void Menu::display(){
             
                     
     
-        else if (input == 4)
+        else if (input == 5)
         {
             cout << "Goodbye" << endl;
             exit(EXIT_SUCCESS);

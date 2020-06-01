@@ -31,16 +31,18 @@ class PlayGame{
         bool loadGame(string filename);
         bool f_check();
         void wallTiling();
-
+        void setExtendMode();
 
     private:
         bool hasWinner;
         bool endGame = false;
         bool s_check = false;
+        bool extendMode = false;
         std::vector<tile> bag;
         LinkedList<tile> boxLid{};
         std::vector<std::vector<tile>> factories;
-        PlayerBoard *player[2];
+        vector<PlayerBoard> *players;
+        int playerNumber;
 };
 
 
