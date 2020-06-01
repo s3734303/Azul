@@ -40,6 +40,7 @@
 		372C73AE24836C9A008DA129 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		372C73AF24836C9A008DA129 /* PlayGame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayGame.cpp; sourceTree = "<group>"; };
 		372C73B024836C9A008DA129 /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Menu.h; sourceTree = "<group>"; };
+		377566802484CB8E00F78C33 /* Tree.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Tree.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +85,7 @@
 				372C73AC24836C9A008DA129 /* Types.cpp */,
 				372C73AD24836C9A008DA129 /* Types.h */,
 				372C739F24836C62008DA129 /* main.cpp */,
+				377566802484CB8E00F78C33 /* Tree.hpp */,
 			);
 			path = Azul;
 			sourceTree = "<group>";

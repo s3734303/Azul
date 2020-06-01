@@ -28,6 +28,7 @@ void PlayGame::showPlayersBoard(int x)
     getline(cin, input);
     regex r("^turn\\s[012345]\\s[FRYBLU]\\s[12345]");
     regex s("^save");
+    regex h("^help");
     if (regex_match(input.begin(), input.end(), r)) 
     {
         regex ws_re("\\s+");
@@ -48,6 +49,12 @@ void PlayGame::showPlayersBoard(int x)
         saveGame(input.substr(input.find(' ') + 1));
         printf("Game successfully saved!\n");
         s_check = true;
+    }
+    else if(regex_search(input, h, std::regex_constants::match_continuous)){
+        cout<<"usage:"<<endl;
+        cout<<"turn <Factory Number> <tile> <storage number>"<< endl;
+        cout<<"save game"<<endl;
+        cout<<"savegame <filename>"<<endl;
     }
     else 
     {

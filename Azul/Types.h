@@ -26,7 +26,7 @@ using std::cin;
 using std::endl;
 
 
-
+string enumToDisplay(tile t);
 char enumToChar(tile t);
 tile charToEnum(char c);
 

@@ -33,3 +33,17 @@ tile charToEnum(char c){
         default: throw 3;
     }
 }
+string enumToDisplay(tile t){
+    switch (t) {
+        case Y: return "♠️";
+        case R: return "🟥";
+        case U: return "⬛️";
+        case L: return "⬜️";
+        case B: return "🟦";
+        case F: return "1️⃣";
+        case E: return ".";
+        case X: return " ";
+        
+        
+    }
+}
