@@ -14,14 +14,8 @@ PlayGame::~PlayGame()
 
 void PlayGame::playerSetup(string player1, string player2)
 {
-    if(!extendMode){
-        players->push_back(PlayerBoard(player1));
-        players->push_back(PlayerBoard(player2));
-    }
-    else{
-        players->push_back(PlayerBoard(player1));
-        players->push_back(PlayerBoard(player2));
-    }
+    players->push_back(PlayerBoard(player1,extendMode));
+    players->push_back(PlayerBoard(player2,extendMode));
 }
 
 
@@ -343,7 +337,7 @@ bool PlayGame::loadGame(string filename)
             else if(parse == "#PLAYER_END"){
                 if(playerName.empty() || pile_str.empty() || wall_str.empty())
                     throw 5;
-                players->push_back(PlayerBoard(playerName));
+                players->push_back(PlayerBoard(playerName,false));
                 players->at(players->size()-1).loader(wall_str, pile_str, floor_str);
                 players->at(players->size()-1).setScore(score);
                 playerName.clear();

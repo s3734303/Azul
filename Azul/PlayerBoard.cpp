@@ -1,7 +1,10 @@
 #include "PlayerBoard.h"
 
-PlayerBoard::PlayerBoard(std::string playerName)
+PlayerBoard::PlayerBoard(std::string playerName,bool XtendMode)
 {
+    if(XtendMode)
+        enableXtendMode();
+    
     this->playerName = playerName;
     for(int i=0;i<DIM;i++){
         for(int j=0;j<DIM;j++){
@@ -32,6 +35,13 @@ string PlayerBoard::getPlayerName()
     return playerName;
 }
 
+void PlayerBoard::enableXtendMode()
+{
+    DIM=6;
+    f_size=8;
+    floorLineScores.push_back(-4);
+    
+}
 
 
 bool PlayerBoard::addToWall(tile tiles, int pileLine)
@@ -414,12 +424,21 @@ int PlayerBoard::calcFloorLine() //Redefinition of 'calcFloorLine' DONE
     int deduction =0;
     for (int i=0; i<this->floorLine.size(); i++) //Member reference type 'PlayerBoard *' is a pointer; did you mean to use '->'?
     {
-        deduction += floorLineScores[i];
+        deduction += floorLineScores.at(i);
     }
 
     return deduction;
 
 }
+
+vector<tile> PlayerBoard::getFloorLine()
+{
+    vector<tile> broken;
+    broken =floorLine;
+    floorLine.erase(floorLine.begin(),floorLine.end());
+    return broken;
+}
+    
 
 void PlayerBoard::endGameScoring() //Redefinition of 'endGameScoring'DONE
 {

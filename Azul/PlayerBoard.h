@@ -5,7 +5,7 @@
 class PlayerBoard{
     public:
     //include a copy constructor
-    PlayerBoard(std::string playerName);
+    PlayerBoard(std::string playerNamebool,bool XtendMode);
     ~PlayerBoard();
         
           
@@ -16,6 +16,8 @@ class PlayerBoard{
     void addToFloor(tile tiles);
 
     string toString();
+    
+    void enableXtendMode();
 
     bool addToWall(tile tiles, int pileLine);
 
@@ -49,10 +51,8 @@ class PlayerBoard{
 
     vector<tile> discarded_pile();
 
-    vector<tile> getFloorLine()
-    {
-        return floorLine;
-    }
+    vector<tile> getFloorLine();
+
                 
 
     private:
@@ -71,6 +71,16 @@ class PlayerBoard{
             {'R','U','L','B','Y'},
             {'Y','R','U','L','B'},
     };
+    char blueprintX[6][6]=
+    {
+            {'B','Y','R','U','L','C'},
+            {'C','B','Y','R','U','L'},
+            {'L','C','B','Y','R','U'},
+            {'U','L','C','B','Y','R'},
+            {'R','U','L','C','B','Y'},
+            {'Y','R','U','L','C','B'},
+    };
+    
     int score = 0;
     bool extendMode = false;
     
