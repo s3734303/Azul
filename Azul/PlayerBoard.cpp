@@ -5,14 +5,18 @@ PlayerBoard::PlayerBoard(std::string playerName,bool XtendMode)
     if(XtendMode)
         enableXtendMode();
     
+    wall = new vector<vector<tile>>();
+    pile = new vector<vector<tile>>();
     this->playerName = playerName;
     for(int i=0;i<DIM;i++){
+        wall->push_back(*new vector<tile>);
+        pile->push_back(*new vector<tile>);
         for(int j=0;j<DIM;j++){
-            wall[i][j]='.';
-            pile[i][j]=X;
+            wall->at(i).push_back(E);
+            pile->at(i).push_back(X);
         }
         for(int k =0;k<=i;k++)
-            pile[i][k]=E;
+            pile->at(i).at(k)=E;
     }
 }
 
@@ -50,25 +54,40 @@ bool PlayerBoard::addToWall(tile tiles, int pileLine)
     bool action =true;
     for(int i=0; i<DIM; i++)
     {
-        if(wall[pileLine][i]!='.'){
+        if(wall->at(pileLine).at(i)!=E){
             for(int k=0;k<DIM;k++)
                 if((pileLine+k)%DIM==i && tiles!=enumToChar(static_cast<tile>(k)))
                     action = false;
         }
-        
-         if (enumToChar(tiles) == blueprint[pileLine][i])
-         {
-             if (wall[pileLine][i] == '.')
-             {
-                wall[pileLine][i] = enumToChar(tiles);
-                setScore(calcScore(pileLine,i));
-             }
-             else 
-             {
-                 cout<<"Cannot place tile on this Line!"<<endl;
-             }
-             
-         }
+        if(extendMode){
+            if (enumToChar(tiles) == blueprintX[pileLine][i])
+            {
+                if (wall->at(pileLine).at(i) == E)
+                {
+                   wall->at(pileLine).at(i) = tiles;
+                   setScore(calcScore(pileLine,i));
+                }
+                else
+                {
+                    cout<<"Cannot place tile on this Line!"<<endl;
+                }
+            }
+            
+        }else{
+            if (enumToChar(tiles) == blueprint[pileLine][i])
+            {
+                if (wall->at(pileLine).at(i) == E)
+                {
+                   wall->at(pileLine).at(i) = tiles;
+                   setScore(calcScore(pileLine,i));
+                }
+                else
+                {
+                    cout<<"Cannot place tile on this Line!"<<endl;
+                }
+            }
+        }
+         
 
     }
 
@@ -77,12 +96,12 @@ bool PlayerBoard::addToWall(tile tiles, int pileLine)
     int wallLineProgress = 0;
     for(int j=0; j<DIM; j++)
     {
-        if (wall[pileLine][j] != '.')
+        if (wall->at(pileLine).at(j) != E)
         {
             wallLineProgress++;
         }
     }
-    if (wallLineProgress ==5)
+    if (wallLineProgress ==DIM)
     {
         return true;
     }
@@ -103,20 +122,20 @@ bool PlayerBoard::tilingPhase()
         row = 0;
         for (int j = 0; j<DIM; j++)
         {
-            if (pile[i][j] != E && pile[i][j] != X)
+            if (pile->at(i).at(j) != E && pile->at(i).at(j) != X)
             {
                 row++;
             }
 
             if (row == i+1)
             {
-               endGame= addToWall(pile[i][j],i);
+               endGame= addToWall(pile->at(i).at(j),i);
                for(int k=0; k<DIM; k++)
                {
-                   if(pile[i][k] != tile::E && pile[i][k] != tile::X)
+                   if(pile->at(i).at(k) != tile::E && pile->at(i).at(k) != tile::X)
                    {
-                       discarded.insert(discarded.end(), i , pile[i][j]);
-                       pile[i][k] = tile::E;
+                       discarded.insert(discarded.end(), i , pile->at(i).at(j));
+                       pile->at(i).at(k) = tile::E;
                    }
                }  
             }
@@ -134,11 +153,11 @@ int PlayerBoard::calcScore(int row, int col)
     int totalCount = 0;
 
      //column scoring
-    if (checkforTile(wall[row][col -1 ]))
+    if (checkforTile(wall->at(row).at(col-1)))
     {
         colCount += checkDirection(row,col,0,-1);
     }
-    if ( checkforTile(wall[row][col +1]))
+    if ( checkforTile(wall->at(row).at(col+1)))
     {
         
         colCount += checkDirection(row, col,0,1);
@@ -146,12 +165,12 @@ int PlayerBoard::calcScore(int row, int col)
     colCount++;
 
     //row scoring
-    if ( checkforTile(wall[row-1][col]))
+    if ( checkforTile(wall->at(row-1).at(col)))
     {
         
         rowCount += checkDirection(row, col,-1,0);
     }
-    if (checkforTile(wall[row+1][col]))
+    if (checkforTile(wall->at(row+1).at(col)))
     {
         
         rowCount += checkDirection(row, col,+1,0);
@@ -161,7 +180,7 @@ int PlayerBoard::calcScore(int row, int col)
     totalCount = rowCount + colCount;
 
     // if no tiles adjacent to this position
-    if (!checkforTile(wall[row][col -1 ]) && !checkforTile(wall[row][col +1 ]) && !checkforTile(wall[row-1][col]) && !checkforTile(wall[row+1][col]))
+    if (!checkforTile(wall->at(row).at(col-1)) && !checkforTile(wall->at(row).at(col+1)) && !checkforTile(wall->at(row-1).at(col)) && !checkforTile(wall->at(row+1).at(col)))
     {
         totalCount++;
     }
@@ -178,7 +197,7 @@ int PlayerBoard::checkDirection(int positionY, int positionX,int changeY, int ch
     int y = positionY;
     while (!finished)
     {
-        if(checkforTile(wall[y + changeY][x + changeX]))
+        if(checkforTile(wall->at(Y+changeY).at(X+changeX)))
         {
             counter++;
             x += changeX;
@@ -225,7 +244,7 @@ vector<string> PlayerBoard::display(){
 
     for(int i=0;i<DIM;i++){
         for(int j=0;j<DIM;j++){
-            wall_display[i][j]=enumToDisplay(charToEnum(wall[i][j]));
+            wall_display[i][j]=enumToDisplay(wall->at(i).at(j));
                 
         }
     }
@@ -238,7 +257,7 @@ vector<string> PlayerBoard::display(){
     display_str.clear();
     for(int i =0;i<DIM;i++){
         for(int j =0;j<DIM;j++){
-            pile_display[i][j]=enumToDisplay(pile[i][j]);
+            pile_display[i][j]=enumToDisplay(pile->at(i).at(j));
         }
             
     }
@@ -279,9 +298,9 @@ void PlayerBoard::moveTilesToPiles(vector<tile> picked, int noOfTiles, int pileN
      
         for (int i=0; i<DIM; i++)
         {
-                 if (pile[pileNo-1][i] == E && tilesLeft !=0)
+                 if (pile->at(pileNo-1).at(i) == E && tilesLeft !=0)
                 {
-                    pile[pileNo-1][i] = placeholder[0];
+                    pile->at(pileNo-1).at(i) = placeholder[0];
                     tilesLeft--; //Expected ';' after expression DONE
                 }
         }
@@ -306,13 +325,16 @@ bool PlayerBoard::addToPiles(int factory, char color, int pileNumber, vector< ve
 
     if(!matrix[factory].empty())
     {
-//        for(char c : wall[pileNumber-1]){
-//            if(charToEnum(c)==t_color){
-//                cout << "Can't put here" << endl;
-//                
-//                return false;
-//            }
-//        }
+        for(tile t : wall->at(pileNumber-1)){
+            if(t==t_color){
+                cout << "Can't put here" << endl;
+                return false;
+            }
+        }
+        if(t_color!= pile->at(pileNumber-1).at(0) && pile->at(pileNumber-1).at(0)!=E){
+            cout << "Can't put here" << endl;
+            return false;
+        }
         if(std::find(matrix[factory].begin(), matrix[factory].end(), t_color) != matrix[factory].end())
         {
             std::copy_if(matrix[factory].begin(), matrix[factory].end(), std::back_inserter(pickedTiles), [&](tile t){return t == t_color;});
@@ -364,13 +386,13 @@ string PlayerBoard::toString(){
     str.append("\n#PLAYER_WALL\n");
     for(int i = 0;i<DIM;i++){
         for(int j = 0;j<DIM;j++){
-            str.push_back(wall[i][j]);
+            str.push_back(enumToChar(wall->at(i).at(j)));
         }
     }
     str.append("\n#PLAYER_PILES\n");
     for(int i = 0;i <DIM;i++){
         for(int j = 0;j<=i;j++){
-            str.push_back(enumToChar(pile[i][j]));
+            str.push_back(enumToChar(pile->at(i).at(j)));
         }
     }
         
@@ -392,23 +414,23 @@ string PlayerBoard::toString(){
 void PlayerBoard::loader(string wall_str,string pile_str,string floor_str){
     for(int i=0;i<DIM;i++){
         for(int j=0;j<DIM;j++){
-            wall[i][j] = wall_str.at(i*5 + j);
-            if(wall[i][j]!='.'){
+            wall->at(i).at(j) = charToEnum(wall_str.at(i*5 + j));
+            if(wall->at(i).at(j)!=E){
                 for(int k=0;k<DIM;k++)
-                    if((i+k)%DIM==j && wall[i][j]!=enumToChar(static_cast<tile>(k)))
+                    if((i+k)%DIM==j && wall->at(i).at(j)!=static_cast<tile>(k))
                         throw 5;
             }
-            for(tile t : pile[i])
-                if(enumToChar(t)==wall[i][j] && wall[i][j]!='.')
+            for(tile t : pile->at(i))
+                if(t==wall->at(i).at(j) && wall->at(i).at(j)!=E)
                     throw 5;
         }
     }
     int c=0;
     for(int i =0;i<DIM;i++){
         for(int j = 0;j<=i;j++){
-            if(j>0 && charToEnum(pile_str.at(c))!=pile[i][j-1] && pile[i][j-1] && charToEnum(pile_str.at(c)) !=E)
+            if(j>0 && charToEnum(pile_str.at(c))!=pile->at(i).at(j-1) && pile->at(i).at(j-1) && charToEnum(pile_str.at(c)) !=E)
                 throw 5;
-            pile[i][j] = charToEnum(pile_str.at(c));
+            pile->at(i).at(j) = charToEnum(pile_str.at(c));
             c++;
         }
     }
@@ -464,7 +486,7 @@ void PlayerBoard::endGameScoring() //Redefinition of 'endGameScoring'DONE
         for(int j=0; j<DIM; j++)
         {
             //row by row checks for completed rows
-            if (wall[i][j] != '.')
+            if (wall->at(i).at(j) != E)
             {
                 wallRowProgress++;
             }
@@ -474,7 +496,7 @@ void PlayerBoard::endGameScoring() //Redefinition of 'endGameScoring'DONE
             }
 
             //column by column check for completed columns
-            if (wall[j][i] != '.')
+            if (wall->at(i).at(j) != E)
             {
                 wallColProgress++;
             }
@@ -484,27 +506,27 @@ void PlayerBoard::endGameScoring() //Redefinition of 'endGameScoring'DONE
             }
             
             //colour checks
-            if (wall[i][j] == 'R')
+            if (wall->at(i).at(j) == R)
             {
                 r++;
             }
 
-            if (wall[i][j] == 'B')
+            if (wall->at(i).at(j) == B)
             {
                 b++;
             }
 
-            if (wall[i][j] == 'Y')
+            if (wall->at(i).at(j) == Y)
             {
                 y++;
             }
 
-            if (wall[i][j] == 'U')
+            if (wall->at(i).at(j) == U)
             {
                 u++;
             }
 
-            if (wall[i][j] == 'L')
+            if (wall->at(i).at(j) == L)
             {
                 l++;
             }

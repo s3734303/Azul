@@ -22,9 +22,9 @@ void PlayGame::playerSetup(string player1, string player2)
 void PlayGame::showPlayersBoard(int x)
 {
     std::cout << factoryToString();
-    for(int i =0;i<players->at(x).display().size();i++){
-        for(PlayerBoard player :*players){
-            std::cout<<player.display().at(i);
+    for(int j =0;j<players->at(x).display().size();j++){
+        for(int i=0;i<players->size();i++){
+            std::cout<<players->at((x+i)%players->size()).display().at(j);
             std::cout<< "\t";
         }
         std::cout<<endl;
@@ -34,13 +34,16 @@ void PlayGame::showPlayersBoard(int x)
         std::cout<<enumToDisplay(t);
     std::cout<<endl;
     std::string input;
-    std::cout<<"\nY:🟨 R:🟥 U:⬛️ L:🟩 B:🟦\n"<<std::endl;
+    std::cout<<"\nY:🟨 R:🟥 U:⬛️ L:🟩 B:🟦";
+    if(extendMode)  std::cout<<" C:🟫";
+    std::cout<<std::endl;
     std::cout<< "\n"<< players->at(x).getPlayerName() <<"> ";
     std::getline(cin, input);
     std::regex r("^turn\\s[012345]\\s[FRYBLU]\\s[12345]");
+    std::regex r1("^turn\\s[012345]\\s[FRYBLUC]\\s[123456]");
     std::regex s("^save");
     std::regex h("^help");
-    if (regex_match(input.begin(), input.end(), r)) 
+    if (regex_match(input.begin(), input.end(), r) ||(regex_match(input.begin(), input.end(), r1) && extendMode)) 
     {
         std::regex ws_re("\\s+");
 
@@ -118,9 +121,9 @@ void PlayGame::play(bool newGame)
     if(!s_check)
     {
         Tree<PlayerBoard> *scoresCompare = new Tree<PlayerBoard>();
-        for(PlayerBoard player :*players){
-            player.endGameScoring();
-            scoresCompare->insert(player, player.getfinalScores());
+        for(int i=0;i<players->size();i++){
+            players->at(i).endGameScoring();
+            scoresCompare->insert(players->at(i), players->at(i).getfinalScores());
         }
 
     
@@ -250,6 +253,8 @@ std::ostream& operator<<(std::ostream& os, const vector<T>& v)
 void PlayGame::saveGame(string filename)
 {
     std::ofstream NewSave(filename);
+    if(extendMode)
+        NewSave << "#XtendMode\n";
     for(PlayerBoard player : *players){
         NewSave << player.toString();
     }
@@ -295,6 +300,8 @@ bool PlayGame::loadGame(string filename)
         std::ifstream SaveGame(filename);
         while(SaveGame.peek()!=EOF){
             getline(SaveGame, parse);
+            if(parse =="#XtendMode")
+                extendMode=true;
             if(parse == "#COMMENT"){
                 string str;
                 getline(SaveGame,str);

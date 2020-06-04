@@ -56,20 +56,18 @@ class PlayerBoard{
                 
 
     private:
-    typedef char Wall[5][5];
-//    typedef char WallX[6][6];
-    Wall wall;
-//    WallX wallX;
-    int floorLineScores[7] = { -1, -1, -2, -2, -2, -3, -3};
+    vector<vector<tile>> *wall;
+    vector<int> floorLineScores = { -1, -1, -2, -2, -2, -3, -3};
+
 //    int floorLineScoresX[8] = { -1, -1, -2, -2, -2, -3, -3, -4};
     // blueprint to set framework for wall (used in pile to wall function)
-    char blueprint[5][5]=
+    tile blueprint[5][5]=
     {
-            {'B','Y','R','U','L'},
-            {'L','B','Y','R','U'},
-            {'U','L','B','Y','R'},
-            {'R','U','L','B','Y'},
-            {'Y','R','U','L','B'},
+            {B,Y,R,U,L},
+            {L,B,Y,R,U},
+            {U,L,B,Y,R},
+            {R,U,L,B,Y},
+            {Y,R,U,L,B},
     };
     char blueprintX[6][6]=
     {
@@ -86,7 +84,7 @@ class PlayerBoard{
     
     int DIM = 5;
 //    int DIMX = 6;
-    tile pile[5][5];
+    vector<vector<tile>> *pile;
 //    tile pileX[6][6];
     int f_size = 7;
 //    int f_sizeX = 8;
