@@ -51,14 +51,8 @@ void PlayerBoard::enableXtendMode()
 bool PlayerBoard::addToWall(tile tiles, int pileLine)
 {
     // If tile matches wallLine tile of blueprint, and space in wall is '.', wall gets char of tile
-    bool action =true;
     for(int i=0; i<DIM; i++)
     {
-        if(wall->at(pileLine).at(i)!=E){
-            for(int k=0;k<DIM;k++)
-                if((pileLine+k)%DIM==i && tiles!=enumToChar(static_cast<tile>(k)))
-                    action = false;
-        }
         if(extendMode){
             if (enumToChar(tiles) == blueprintX[pileLine][i])
             {
@@ -74,7 +68,7 @@ bool PlayerBoard::addToWall(tile tiles, int pileLine)
             }
             
         }else{
-            if (enumToChar(tiles) == blueprint[pileLine][i])
+            if (tiles == blueprint[pileLine][i])
             {
                 if (wall->at(pileLine).at(i) == E)
                 {
@@ -159,7 +153,6 @@ int PlayerBoard::calcScore(int row, int col)
     }
     if ( checkforTile(wall->at(row).at(col+1)))
     {
-        
         colCount += checkDirection(row, col,0,1);
     }
     colCount++;
@@ -167,7 +160,6 @@ int PlayerBoard::calcScore(int row, int col)
     //row scoring
     if ( checkforTile(wall->at(row-1).at(col)))
     {
-        
         rowCount += checkDirection(row, col,-1,0);
     }
     if (checkforTile(wall->at(row+1).at(col)))
@@ -213,16 +205,11 @@ int PlayerBoard::checkDirection(int positionY, int positionX,int changeY, int ch
 
 }
 
-bool PlayerBoard::checkforTile(char position)
+bool PlayerBoard::checkforTile(tile position)
 {
-    char set[5] = {'R','Y','B','L','U'};
-    for (int i= 0; i<5;i++)
-    {
-        if (position == set[i])
-        {
-            return true;
-        }
-    }
+   
+    if(position!=E)
+        return true;
 
     return false;
 }
@@ -277,15 +264,15 @@ vector<string> PlayerBoard::display(){
         }
         out.push_back(display_str);
         display_str.clear();
+        
     }
-//    display_str.append("broken: ");
-//    for(tile t : floorLine){
-//        display_str.append(enumToDisplay(t));
-//        //display_str.push_back(' ');
-//    }
-//    while(display_str.length()<40) display_str.push_back(' ');
-//    out.push_back(display_str);
-    
+
+    for(tile t : floorLine)
+        display_str.append(enumToDisplay(t));
+    for(int i =0;i<f_size-floorLine.size();i++)
+        display_str.append(enumToDisplay(E));
+    while(display_str.length()<57) display_str.push_back(' ');
+    out.push_back(display_str);
     return out;
 }
 
@@ -325,20 +312,34 @@ bool PlayerBoard::addToPiles(int factory, char color, int pileNumber, vector< ve
 
     if(!matrix[factory].empty())
     {
-        for(tile t : wall->at(pileNumber-1)){
-            if(t==t_color){
-                cout << "Can't put here" << endl;
-                return false;
-            }
-        }
-        if(t_color!= pile->at(pileNumber-1).at(0) && pile->at(pileNumber-1).at(0)!=E){
-            cout << "Can't put here" << endl;
-            return false;
-        }
+        
+        
         if(std::find(matrix[factory].begin(), matrix[factory].end(), t_color) != matrix[factory].end())
         {
             std::copy_if(matrix[factory].begin(), matrix[factory].end(), std::back_inserter(pickedTiles), [&](tile t){return t == t_color;});
             matrix[factory].erase(std::remove(matrix[factory].begin(), matrix[factory].end(), t_color), matrix[factory].end());
+            
+            if(t_color!= pile->at(pileNumber-1).at(0) && pile->at(pileNumber-1).at(0)!=E){
+                for(tile t :pickedTiles){
+                    floorLine.push_back(t);
+                    
+                }
+                matrix[factory].clear();
+                return true;
+            }
+            else{
+                for(tile t : wall->at(pileNumber-1)){
+                    if(t==t_color){
+                        for(tile t :pickedTiles){
+                            floorLine.push_back(t);
+                        }
+                        matrix[factory].clear();
+                        return true;
+                    }
+                }
+                
+            }
+            
             int amount = pickedTiles.size();
             if(factory == 0)
             {
@@ -531,7 +532,7 @@ void PlayerBoard::endGameScoring() //Redefinition of 'endGameScoring'DONE
             {
                 l++;
             }
-            if (wall->at(i).at(j) == C)
+            if (wall->at(i).at(j) == O)
             {
                 c++;
             }

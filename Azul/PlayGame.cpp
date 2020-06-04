@@ -29,18 +29,15 @@ void PlayGame::showPlayersBoard(int x)
         }
         std::cout<<endl;
     }
-    std::cout<<"broken";
-    for(tile t : players->at(x).getFloorLine())
-        std::cout<<enumToDisplay(t);
     std::cout<<endl;
     std::string input;
     std::cout<<"\nY:🟨 R:🟥 U:⬛️ L:🟩 B:🟦";
-    if(extendMode)  std::cout<<" C:🟫";
+    if(extendMode)  std::cout<<" O:🟧";
     std::cout<<std::endl;
     std::cout<< "\n"<< players->at(x).getPlayerName() <<"> ";
     std::getline(cin, input);
     std::regex r("^turn\\s[012345]\\s[FRYBLU]\\s[12345]");
-    std::regex r1("^turn\\s[012345]\\s[FRYBLUC]\\s[123456]");
+    std::regex r1("^turn\\s[012345]\\s[FRYBLUO]\\s[123456]");
     std::regex s("^save");
     std::regex h("^help");
     if (regex_match(input.begin(), input.end(), r) ||(regex_match(input.begin(), input.end(), r1) && extendMode)) 
@@ -153,7 +150,7 @@ string PlayGame::factoryToString(){
 //fill Bag with 100 tiles (20 of each color) and shuffle
 void PlayGame::initialBagfilling(){
     if(!extendMode){
-        for(int i = 0; i < tile::C; i++){
+        for(int i = 0; i < tile::O; i++){
             for(int j=0; j<20; j++){
                 bag.push_back(static_cast<tile>(i));
             }
@@ -386,21 +383,26 @@ bool PlayGame::loadGame(string filename)
             else if (parse == "#BAG"){
                 getline(SaveGame,bag_str);
                 for(char c : bag_str){
-                    if(c=='F')  throw 1;
+                    if(c=='F')
+                        throw 1;
                     bag.push_back(charToEnum(c));
                 }
             }
             else if (parse == "#BOXLID"){
                 getline(SaveGame,boxLid_str);
                 for(char c : boxLid_str){
-                    if(int(c)==F)  throw 1;
+                    if(int(c)==F)
+                        throw 1;
                     boxLid.InsertHead(static_cast<tile>(int(c)));
                 }
             }
-            else    throw 2;
+            else
+                throw 2;
         }
-        if(pn<2)   throw 5;
-        if(f!=1)    throw 1;
+        if(pn<2)
+            throw 5;
+        if(f!=1)
+            throw 1;
         SaveGame.close();
         return true;
     }catch(int e){

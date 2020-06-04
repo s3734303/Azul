@@ -41,7 +41,7 @@ class PlayerBoard{
 
     int checkDirection(int positionY, int positionX,int changeY, int changeX);
 
-    bool checkforTile( char position);
+    bool checkforTile( tile position);
 
     vector<string>display();
 
@@ -69,14 +69,14 @@ class PlayerBoard{
             {R,U,L,B,Y},
             {Y,R,U,L,B},
     };
-    char blueprintX[6][6]=
+    tile blueprintX[6][6]=
     {
-            {'B','Y','R','U','L','C'},
-            {'C','B','Y','R','U','L'},
-            {'L','C','B','Y','R','U'},
-            {'U','L','C','B','Y','R'},
-            {'R','U','L','C','B','Y'},
-            {'Y','R','U','L','C','B'},
+            {B,Y,R,U,L,O},
+            {O,B,Y,R,U,L},
+            {L,O,B,Y,R,U},
+            {U,L,O,B,Y,R},
+            {R,U,L,O,B,Y},
+            {Y,R,U,L,O,B},
     };
     
     int score = 0;

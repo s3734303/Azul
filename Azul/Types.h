@@ -1,7 +1,7 @@
 #ifndef __TYPES__H__
 #define __TYPES__H__
 
-enum tile {B,Y,R,U,L,C,F,E,X};
+enum tile {B,Y,R,U,L,O,F,E,X};
 
 
 
