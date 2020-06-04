@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>054F5FC4-0805-4D6D-A9DA-A3D44C674F7D</key>
+		<key>12334D52-29A4-42AB-AF4A-103259F594A0</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogMajorGroupSection</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.target.product-type.tool</string>
 			<key>fileName</key>
-			<string>054F5FC4-0805-4D6D-A9DA-A3D44C674F7D.xcactivitylog</string>
+			<string>12334D52-29A4-42AB-AF4A-103259F594A0.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -26,13 +26,13 @@
 			<key>signature</key>
 			<string>Azul-coxricuadrhywwcfkjitxtyohehw</string>
 			<key>timeStartedRecording</key>
-			<real>612695581.59064698</real>
+			<real>612945750.82734096</real>
 			<key>timeStoppedRecording</key>
-			<real>612695582.41013503</real>
+			<real>612945751.56118298</real>
 			<key>title</key>
 			<string>Build target Azul</string>
 			<key>uniqueIdentifier</key>
-			<string>054F5FC4-0805-4D6D-A9DA-A3D44C674F7D</string>
+			<string>12334D52-29A4-42AB-AF4A-103259F594A0</string>
 		</dict>
 	</dict>
 	<key>preserveOldLogs</key>

@@ -12,6 +12,7 @@ enum tile {B,Y,R,U,L,C,F,E,X};
 #include <string>
 #include <unistd.h>
 #include <array>
+#include "Tree.hpp"
 
 
 using std::array;

@@ -5,7 +5,7 @@
 #include "PlayerBoard.h"
 #include <fstream>
 #define FACTORY_NUM 6
-
+using namespace std;
 class PlayGame{
     public:
         PlayGame();
@@ -40,7 +40,7 @@ class PlayGame{
         bool extendMode = false;
         std::vector<tile> bag;
         LinkedList<tile> boxLid{};
-        std::vector<std::vector<tile>> factories;
+        vector<std::vector<tile>> factories;
         vector<PlayerBoard> *players;
         int playerNumber;
 };

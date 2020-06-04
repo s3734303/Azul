@@ -28,10 +28,39 @@ class Tree{
         bool HasRight(){
             return Right!=nullptr;
         }
+        void DeleteNode(Node* root,int key){
+            if(root == nullptr) return root;
+            if(key > root->key)
+                root->right = DeleteNode(root->Right, key);
+            else if(key < root->key)
+                root->Left = DeleteNode(root->Left, key);
+            else{
+                if(!root->HasLeft()){
+                    Node *t = root->Left;
+                    free(root);
+                    return t;
+                }
+                else if(!root->HasRight()){
+                    Node *t = root->Right;
+                    free(root);
+                    return t;
+                }
+            }
+        }
+        Node* InsertNode(Node* root,Node* node){
+            if(root==nullptr)
+                return node;
+            if(node->key>root->key)
+                root->Right = InsertNode(root->Right,node);
+            else
+                root->Left = InsertNode(root->Left,node);
+            return root;
+        }
         
     };
     Node* root;
     int size{0};
+    
     public:
     
     Tree()=default;
@@ -47,37 +76,25 @@ class Tree{
     void Clear(){
         root =nullptr;
     }
-     
-    void add(const T& value,int key){
-        if(root==nullptr)
-            root = new Node(value,key);
-        return;
-        Node* header = root;
-        bool run = true;
-        while((header->HasLeft() || header->HasRight()) && run) {
-            if(key>header->key){
-                if(header->HasRight())
-                    header = header->Right;
-                else{
-                    header->Right = new Node(value,key);
-                    run = false;
-                }
-            }
-            else{
-                if(header->HasLeft())
-                    header = header->Left;
-                else{
-                    header->Left = new Node(value,key);
-                    run=false;
-                }
-            }
-        }
+    void remove(int key){
+        DeleteNode(root,key);
+    }
+    
+    void insert(const T& value,int key){
+        
+        root =root->InsertNode(root, new Node(value,key));
         size++;
     }
     T getLargest(){
         Node* header = root;
         while(header->HasRight())
             header=header->Right;
+        return header->Data;
+    }
+    T getSmallest(){
+        Node* header = root;
+        while(header->HasLeft())
+            header=header->Left;
         return header->Data;
     }
 

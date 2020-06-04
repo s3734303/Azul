@@ -37,14 +37,20 @@ string PlayerBoard::getPlayerName()
 bool PlayerBoard::addToWall(tile tiles, int pileLine)
 {
     // If tile matches wallLine tile of blueprint, and space in wall is '.', wall gets char of tile
-    char tileChar = enumToChar(tiles);
+    bool action =true;
     for(int i=0; i<DIM; i++)
     {
-         if (tileChar == blueprint[pileLine][i])
+        if(wall[pileLine][i]!='.'){
+            for(int k=0;k<DIM;k++)
+                if((pileLine+k)%DIM==i && tiles!=enumToChar(static_cast<tile>(k)))
+                    action = false;
+        }
+        
+         if (enumToChar(tiles) == blueprint[pileLine][i])
          {
              if (wall[pileLine][i] == '.')
              {
-                wall[pileLine][i] = tileChar;
+                wall[pileLine][i] = enumToChar(tiles);
                 setScore(calcScore(pileLine,i));
              }
              else 
@@ -250,7 +256,6 @@ vector<string> PlayerBoard::display(){
 //    }
 //    while(display_str.length()<40) display_str.push_back(' ');
 //    out.push_back(display_str);
-    //out.push_back("\nY:🟨 R:🟥 U:⬛️ L:🟩 B:🟦\n");
     
     return out;
 }
@@ -283,15 +288,22 @@ void PlayerBoard::moveTilesToPiles(vector<tile> picked, int noOfTiles, int pileN
 
 
 
-void PlayerBoard::addToPiles(int factory, char color, int pileNumber, vector< vector<tile> > &matrix)
-{   
+bool PlayerBoard::addToPiles(int factory, char color, int pileNumber, vector< vector<tile> > &matrix)
+{
     int c = charToEnum(color);
     tile t_color = static_cast<tile>(c);
     std::vector<tile> pickedTiles;
 
     if(!matrix[factory].empty())
     {
-        if(std::find(matrix[factory].begin(), matrix[factory].end(), t_color) != matrix[factory].end()) 
+//        for(char c : wall[pileNumber-1]){
+//            if(charToEnum(c)==t_color){
+//                cout << "Can't put here" << endl;
+//                
+//                return false;
+//            }
+//        }
+        if(std::find(matrix[factory].begin(), matrix[factory].end(), t_color) != matrix[factory].end())
         {
             std::copy_if(matrix[factory].begin(), matrix[factory].end(), std::back_inserter(pickedTiles), [&](tile t){return t == t_color;});
             matrix[factory].erase(std::remove(matrix[factory].begin(), matrix[factory].end(), t_color), matrix[factory].end());
@@ -304,22 +316,26 @@ void PlayerBoard::addToPiles(int factory, char color, int pileNumber, vector< ve
                     matrix[0].erase(std::find(matrix[0].begin(),matrix[0].end(),tile::F));
                     floorLine.push_back(tile::F);
                 }
+                return true;
             }
             else 
             {
-            std::copy(matrix[factory].begin(), matrix[factory].end(), std::back_inserter(matrix[0]));
-            moveTilesToPiles(pickedTiles, amount, pileNumber);
-            matrix[factory].clear();  
+                std::copy(matrix[factory].begin(), matrix[factory].end(), std::back_inserter(matrix[0]));
+                moveTilesToPiles(pickedTiles, amount, pileNumber);
+                matrix[factory].clear();
+                return true;
             }
         }
         else
         {
             cout << "tile not found!" << endl;
+            return false;
         }
     } 
     else 
     {
         cout << "factory has no tiles!" << endl;
+        return false;
     }
         
 }
@@ -372,9 +388,9 @@ void PlayerBoard::loader(string wall_str,string pile_str,string floor_str){
                     if((i+k)%DIM==j && wall[i][j]!=enumToChar(static_cast<tile>(k)))
                         throw 5;
             }
-//            for(tile t : pile[i])
-//                if(enumToChar(t)==wall[i][j] && wall[i][j]!='.')
-//                    throw 5;
+            for(tile t : pile[i])
+                if(enumToChar(t)==wall[i][j] && wall[i][j]!='.')
+                    throw 5;
         }
     }
     int c=0;

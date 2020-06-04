@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>06991A94-9130-416F-9683-E40C96718A3F</key>
+		<key>00E43589-C395-42A5-9E7F-0A9C7850ACC8</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>06991A94-9130-416F-9683-E40C96718A3F.xcactivitylog</string>
+			<string>00E43589-C395-42A5-9E7F-0A9C7850ACC8.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -32,15 +32,15 @@
 			<key>signature</key>
 			<string>Build Azul</string>
 			<key>timeStartedRecording</key>
-			<real>612723727.93929601</real>
+			<real>612945718.97506404</real>
 			<key>timeStoppedRecording</key>
-			<real>612723727.96605599</real>
+			<real>612945719.85806203</real>
 			<key>title</key>
 			<string>Build Azul</string>
 			<key>uniqueIdentifier</key>
-			<string>06991A94-9130-416F-9683-E40C96718A3F</string>
+			<string>00E43589-C395-42A5-9E7F-0A9C7850ACC8</string>
 		</dict>
-		<key>34B1CEF1-06D9-44F5-8B9D-0B411445578E</key>
+		<key>0A98A603-A530-4087-BE62-6546B4628569</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -49,7 +49,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>34B1CEF1-06D9-44F5-8B9D-0B411445578E.xcactivitylog</string>
+			<string>0A98A603-A530-4087-BE62-6546B4628569.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -66,15 +66,15 @@
 			<key>signature</key>
 			<string>Build Azul</string>
 			<key>timeStartedRecording</key>
-			<real>612724102.54956102</real>
+			<real>612945335.84282196</real>
 			<key>timeStoppedRecording</key>
-			<real>612724102.62983406</real>
+			<real>612945336.63510096</real>
 			<key>title</key>
 			<string>Build Azul</string>
 			<key>uniqueIdentifier</key>
-			<string>34B1CEF1-06D9-44F5-8B9D-0B411445578E</string>
+			<string>0A98A603-A530-4087-BE62-6546B4628569</string>
 		</dict>
-		<key>382B5580-B3FB-426D-B241-C11A0D44CB39</key>
+		<key>0F77208E-5812-4A36-B708-3E09D9B8D62C</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -83,7 +83,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>382B5580-B3FB-426D-B241-C11A0D44CB39.xcactivitylog</string>
+			<string>0F77208E-5812-4A36-B708-3E09D9B8D62C.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -100,15 +100,15 @@
 			<key>signature</key>
 			<string>Build Azul</string>
 			<key>timeStartedRecording</key>
-			<real>612722310.49223495</real>
+			<real>612945273.26643205</real>
 			<key>timeStoppedRecording</key>
-			<real>612722312.89121902</real>
+			<real>612945275.46094096</real>
 			<key>title</key>
 			<string>Build Azul</string>
 			<key>uniqueIdentifier</key>
-			<string>382B5580-B3FB-426D-B241-C11A0D44CB39</string>
+			<string>0F77208E-5812-4A36-B708-3E09D9B8D62C</string>
 		</dict>
-		<key>509E788E-49E9-44E1-80A0-38A5A8EF94F0</key>
+		<key>17E2AAEB-EF76-480F-8DF6-6845F0063ECF</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -117,13 +117,13 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>509E788E-49E9-44E1-80A0-38A5A8EF94F0.xcactivitylog</string>
+			<string>17E2AAEB-EF76-480F-8DF6-6845F0063ECF.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
 			<dict>
 				<key>highLevelStatus</key>
-				<string>W</string>
+				<string>E</string>
 			</dict>
 			<key>schemeIdentifier-containerName</key>
 			<string>Azul project</string>
@@ -134,15 +134,15 @@
 			<key>signature</key>
 			<string>Build Azul</string>
 			<key>timeStartedRecording</key>
-			<real>612722102.09802496</real>
+			<real>612945527.62361097</real>
 			<key>timeStoppedRecording</key>
-			<real>612722102.16614199</real>
+			<real>612945529.03833401</real>
 			<key>title</key>
 			<string>Build Azul</string>
 			<key>uniqueIdentifier</key>
-			<string>509E788E-49E9-44E1-80A0-38A5A8EF94F0</string>
+			<string>17E2AAEB-EF76-480F-8DF6-6845F0063ECF</string>
 		</dict>
-		<key>59A3AE46-9932-4218-A960-EB68182BC7F8</key>
+		<key>1BAD3E61-97AE-4B71-ADF6-6FD28D48623D</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -151,13 +151,13 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>59A3AE46-9932-4218-A960-EB68182BC7F8.xcactivitylog</string>
+			<string>1BAD3E61-97AE-4B71-ADF6-6FD28D48623D.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
 			<dict>
 				<key>highLevelStatus</key>
-				<string>W</string>
+				<string>E</string>
 			</dict>
 			<key>schemeIdentifier-containerName</key>
 			<string>Azul project</string>
@@ -168,15 +168,15 @@
 			<key>signature</key>
 			<string>Build Azul</string>
 			<key>timeStartedRecording</key>
-			<real>612722998.87514997</real>
+			<real>612892325.36332095</real>
 			<key>timeStoppedRecording</key>
-			<real>612722998.91717303</real>
+			<real>612892327.03041196</real>
 			<key>title</key>
 			<string>Build Azul</string>
 			<key>uniqueIdentifier</key>
-			<string>59A3AE46-9932-4218-A960-EB68182BC7F8</string>
+			<string>1BAD3E61-97AE-4B71-ADF6-6FD28D48623D</string>
 		</dict>
-		<key>5BB3B9B4-71BA-4357-8DAB-1BE853B3E392</key>
+		<key>208BE4CE-8993-4BA8-9BC5-0CEDBCA7A77D</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -185,13 +185,13 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>5BB3B9B4-71BA-4357-8DAB-1BE853B3E392.xcactivitylog</string>
+			<string>208BE4CE-8993-4BA8-9BC5-0CEDBCA7A77D.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
 			<dict>
 				<key>highLevelStatus</key>
-				<string>W</string>
+				<string>E</string>
 			</dict>
 			<key>schemeIdentifier-containerName</key>
 			<string>Azul project</string>
@@ -202,15 +202,15 @@
 			<key>signature</key>
 			<string>Build Azul</string>
 			<key>timeStartedRecording</key>
-			<real>612722088.49793196</real>
+			<real>612945546.79243004</real>
 			<key>timeStoppedRecording</key>
-			<real>612722088.55376005</real>
+			<real>612945547.51596999</real>
 			<key>title</key>
 			<string>Build Azul</string>
 			<key>uniqueIdentifier</key>
-			<string>5BB3B9B4-71BA-4357-8DAB-1BE853B3E392</string>
+			<string>208BE4CE-8993-4BA8-9BC5-0CEDBCA7A77D</string>
 		</dict>
-		<key>64E53C0B-38F4-4653-8257-55E9A4DDBD66</key>
+		<key>26EF7CA1-8C8A-4A6C-A0D1-AC65EEDF08EB</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -219,7 +219,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>64E53C0B-38F4-4653-8257-55E9A4DDBD66.xcactivitylog</string>
+			<string>26EF7CA1-8C8A-4A6C-A0D1-AC65EEDF08EB.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -236,15 +236,15 @@
 			<key>signature</key>
 			<string>Build Azul</string>
 			<key>timeStartedRecording</key>
-			<real>612724353.58282197</real>
+			<real>612892525.58842194</real>
 			<key>timeStoppedRecording</key>
-			<real>612724353.63716197</real>
+			<real>612892530.56985903</real>
 			<key>title</key>
 			<string>Build Azul</string>
 			<key>uniqueIdentifier</key>
-			<string>64E53C0B-38F4-4653-8257-55E9A4DDBD66</string>
+			<string>26EF7CA1-8C8A-4A6C-A0D1-AC65EEDF08EB</string>
 		</dict>
-		<key>6963CD14-4FD0-4474-9EC4-EF27DDA67C81</key>
+		<key>2A57E3A5-EEDE-47AB-9034-C71052BE6AB6</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -253,7 +253,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>6963CD14-4FD0-4474-9EC4-EF27DDA67C81.xcactivitylog</string>
+			<string>2A57E3A5-EEDE-47AB-9034-C71052BE6AB6.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -270,15 +270,15 @@
 			<key>signature</key>
 			<string>Build Azul</string>
 			<key>timeStartedRecording</key>
-			<real>612724139.10954499</real>
+			<real>612943234.180529</real>
 			<key>timeStoppedRecording</key>
-			<real>612724139.13148201</real>
+			<real>612943236.29974198</real>
 			<key>title</key>
 			<string>Build Azul</string>
 			<key>uniqueIdentifier</key>
-			<string>6963CD14-4FD0-4474-9EC4-EF27DDA67C81</string>
+			<string>2A57E3A5-EEDE-47AB-9034-C71052BE6AB6</string>
 		</dict>
-		<key>6F696CCC-3798-49F4-868E-94EEFA359A41</key>
+		<key>2AA301EB-D702-4CDA-B9FB-4843E77FDBC2</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -287,13 +287,13 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>6F696CCC-3798-49F4-868E-94EEFA359A41.xcactivitylog</string>
+			<string>2AA301EB-D702-4CDA-B9FB-4843E77FDBC2.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
 			<dict>
 				<key>highLevelStatus</key>
-				<string>W</string>
+				<string>E</string>
 			</dict>
 			<key>schemeIdentifier-containerName</key>
 			<string>Azul project</string>
@@ -304,15 +304,15 @@
 			<key>signature</key>
 			<string>Build Azul</string>
 			<key>timeStartedRecording</key>
-			<real>612723554.96138597</real>
+			<real>612945207.78214896</real>
 			<key>timeStoppedRecording</key>
-			<real>612723555.04478502</real>
+			<real>612945208.47699499</real>
 			<key>title</key>
 			<string>Build Azul</string>
 			<key>uniqueIdentifier</key>
-			<string>6F696CCC-3798-49F4-868E-94EEFA359A41</string>
+			<string>2AA301EB-D702-4CDA-B9FB-4843E77FDBC2</string>
 		</dict>
-		<key>7310B8C7-BF42-4B90-BE8D-F11C3D54962A</key>
+		<key>2ABE3E05-41F7-42CC-8486-B315FD312481</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -321,7 +321,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>7310B8C7-BF42-4B90-BE8D-F11C3D54962A.xcactivitylog</string>
+			<string>2ABE3E05-41F7-42CC-8486-B315FD312481.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -338,15 +338,15 @@
 			<key>signature</key>
 			<string>Build Azul</string>
 			<key>timeStartedRecording</key>
-			<real>612722472.79307199</real>
+			<real>612945664.99816704</real>
 			<key>timeStoppedRecording</key>
-			<real>612722474.99114001</real>
+			<real>612945667.51850295</real>
 			<key>title</key>
 			<string>Build Azul</string>
 			<key>uniqueIdentifier</key>
-			<string>7310B8C7-BF42-4B90-BE8D-F11C3D54962A</string>
+			<string>2ABE3E05-41F7-42CC-8486-B315FD312481</string>
 		</dict>
-		<key>7C86B8FF-2E0B-4D48-916A-AED28986B39F</key>
+		<key>2B32F72F-6F65-402C-AF00-FD2D6AC41E7B</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -355,7 +355,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>7C86B8FF-2E0B-4D48-916A-AED28986B39F.xcactivitylog</string>
+			<string>2B32F72F-6F65-402C-AF00-FD2D6AC41E7B.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -372,15 +372,15 @@
 			<key>signature</key>
 			<string>Build Azul</string>
 			<key>timeStartedRecording</key>
-			<real>612721936.60251904</real>
+			<real>612945122.41755795</real>
 			<key>timeStoppedRecording</key>
-			<real>612721939.71972001</real>
+			<real>612945124.51536798</real>
 			<key>title</key>
 			<string>Build Azul</string>
 			<key>uniqueIdentifier</key>
-			<string>7C86B8FF-2E0B-4D48-916A-AED28986B39F</string>
+			<string>2B32F72F-6F65-402C-AF00-FD2D6AC41E7B</string>
 		</dict>
-		<key>88044E60-02CC-4B4B-95A6-7F2C690135D9</key>
+		<key>35A0C7A4-8CBC-47C3-BF43-BC8237A06D29</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -389,13 +389,13 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>88044E60-02CC-4B4B-95A6-7F2C690135D9.xcactivitylog</string>
+			<string>35A0C7A4-8CBC-47C3-BF43-BC8237A06D29.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
 			<dict>
 				<key>highLevelStatus</key>
-				<string>W</string>
+				<string>E</string>
 			</dict>
 			<key>schemeIdentifier-containerName</key>
 			<string>Azul project</string>
@@ -406,15 +406,15 @@
 			<key>signature</key>
 			<string>Build Azul</string>
 			<key>timeStartedRecording</key>
-			<real>612721762.28105199</real>
+			<real>612945391.24844694</real>
 			<key>timeStoppedRecording</key>
-			<real>612721764.40248001</real>
+			<real>612945392.77071905</real>
 			<key>title</key>
 			<string>Build Azul</string>
 			<key>uniqueIdentifier</key>
-			<string>88044E60-02CC-4B4B-95A6-7F2C690135D9</string>
+			<string>35A0C7A4-8CBC-47C3-BF43-BC8237A06D29</string>
 		</dict>
-		<key>92C3F172-AF7B-4ED2-9189-03EAF7C8B8E1</key>
+		<key>39B5E178-1C99-4135-85C2-B2943AE42B8D</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -423,7 +423,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>92C3F172-AF7B-4ED2-9189-03EAF7C8B8E1.xcactivitylog</string>
+			<string>39B5E178-1C99-4135-85C2-B2943AE42B8D.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -440,15 +440,15 @@
 			<key>signature</key>
 			<string>Build Azul</string>
 			<key>timeStartedRecording</key>
-			<real>612722069.09761202</real>
+			<real>612939515.35291505</real>
 			<key>timeStoppedRecording</key>
-			<real>612722069.12896001</real>
+			<real>612939517.83457506</real>
 			<key>title</key>
 			<string>Build Azul</string>
 			<key>uniqueIdentifier</key>
-			<string>92C3F172-AF7B-4ED2-9189-03EAF7C8B8E1</string>
+			<string>39B5E178-1C99-4135-85C2-B2943AE42B8D</string>
 		</dict>
-		<key>9EA54494-D688-47FB-8881-A546E034D192</key>
+		<key>41CEA9A4-EB2A-4D0C-A775-19B3BB2ECB42</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -457,7 +457,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>9EA54494-D688-47FB-8881-A546E034D192.xcactivitylog</string>
+			<string>41CEA9A4-EB2A-4D0C-A775-19B3BB2ECB42.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -474,15 +474,15 @@
 			<key>signature</key>
 			<string>Build Azul</string>
 			<key>timeStartedRecording</key>
-			<real>612723651.28635097</real>
+			<real>612945410.65831804</real>
 			<key>timeStoppedRecording</key>
-			<real>612723651.35002899</real>
+			<real>612945413.54831696</real>
 			<key>title</key>
 			<string>Build Azul</string>
 			<key>uniqueIdentifier</key>
-			<string>9EA54494-D688-47FB-8881-A546E034D192</string>
+			<string>41CEA9A4-EB2A-4D0C-A775-19B3BB2ECB42</string>
 		</dict>
-		<key>C4840113-89B1-4C0B-86AE-71E5949AC994</key>
+		<key>42770A29-F6B1-4809-8AF2-3D6B62F7679B</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -491,13 +491,13 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>C4840113-89B1-4C0B-86AE-71E5949AC994.xcactivitylog</string>
+			<string>42770A29-F6B1-4809-8AF2-3D6B62F7679B.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
 			<dict>
 				<key>highLevelStatus</key>
-				<string>W</string>
+				<string>E</string>
 			</dict>
 			<key>schemeIdentifier-containerName</key>
 			<string>Azul project</string>
@@ -508,15 +508,15 @@
 			<key>signature</key>
 			<string>Build Azul</string>
 			<key>timeStartedRecording</key>
-			<real>612723456.678478</real>
+			<real>612945265.04091704</real>
 			<key>timeStoppedRecording</key>
-			<real>612723456.72657704</real>
+			<real>612945265.74273503</real>
 			<key>title</key>
 			<string>Build Azul</string>
 			<key>uniqueIdentifier</key>
-			<string>C4840113-89B1-4C0B-86AE-71E5949AC994</string>
+			<string>42770A29-F6B1-4809-8AF2-3D6B62F7679B</string>
 		</dict>
-		<key>C9DB3D69-166B-4C68-BC65-693447BC9403</key>
+		<key>48C727B1-1000-4574-82CF-341AAA777037</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -525,13 +525,13 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>C9DB3D69-166B-4C68-BC65-693447BC9403.xcactivitylog</string>
+			<string>48C727B1-1000-4574-82CF-341AAA777037.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
 			<dict>
 				<key>highLevelStatus</key>
-				<string>W</string>
+				<string>E</string>
 			</dict>
 			<key>schemeIdentifier-containerName</key>
 			<string>Azul project</string>
@@ -542,15 +542,15 @@
 			<key>signature</key>
 			<string>Build Azul</string>
 			<key>timeStartedRecording</key>
-			<real>612724654.22608197</real>
+			<real>612945637.43120205</real>
 			<key>timeStoppedRecording</key>
-			<real>612724656.70892501</real>
+			<real>612945638.14995897</real>
 			<key>title</key>
 			<string>Build Azul</string>
 			<key>uniqueIdentifier</key>
-			<string>C9DB3D69-166B-4C68-BC65-693447BC9403</string>
+			<string>48C727B1-1000-4574-82CF-341AAA777037</string>
 		</dict>
-		<key>FE1079BD-5A7C-454A-AF04-AB6872D84134</key>
+		<key>577573A9-ACC0-47FC-A5CF-0ED0F7430F44</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -559,7 +559,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>FE1079BD-5A7C-454A-AF04-AB6872D84134.xcactivitylog</string>
+			<string>577573A9-ACC0-47FC-A5CF-0ED0F7430F44.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -576,13 +576,523 @@
 			<key>signature</key>
 			<string>Build Azul</string>
 			<key>timeStartedRecording</key>
-			<real>612724804.16779399</real>
+			<real>612944141.46723604</real>
 			<key>timeStoppedRecording</key>
-			<real>612724804.20596504</real>
+			<real>612944143.77436304</real>
 			<key>title</key>
 			<string>Build Azul</string>
 			<key>uniqueIdentifier</key>
-			<string>FE1079BD-5A7C-454A-AF04-AB6872D84134</string>
+			<string>577573A9-ACC0-47FC-A5CF-0ED0F7430F44</string>
+		</dict>
+		<key>5BE31FD8-333F-4AC5-A564-0683DA4D5DF0</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>5BE31FD8-333F-4AC5-A564-0683DA4D5DF0.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Azul project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Azul</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Azul</string>
+			<key>timeStartedRecording</key>
+			<real>612945341.30507302</real>
+			<key>timeStoppedRecording</key>
+			<real>612945341.35527205</real>
+			<key>title</key>
+			<string>Build Azul</string>
+			<key>uniqueIdentifier</key>
+			<string>5BE31FD8-333F-4AC5-A564-0683DA4D5DF0</string>
+		</dict>
+		<key>74DD07E0-B1A2-4C3A-80CC-BEEC2A4F2E6F</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>74DD07E0-B1A2-4C3A-80CC-BEEC2A4F2E6F.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Azul project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Azul</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Azul</string>
+			<key>timeStartedRecording</key>
+			<real>612892536.40387797</real>
+			<key>timeStoppedRecording</key>
+			<real>612892536.45971406</real>
+			<key>title</key>
+			<string>Build Azul</string>
+			<key>uniqueIdentifier</key>
+			<string>74DD07E0-B1A2-4C3A-80CC-BEEC2A4F2E6F</string>
+		</dict>
+		<key>8D088361-A0EE-445D-A0A8-D84CB9066786</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>8D088361-A0EE-445D-A0A8-D84CB9066786.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Azul project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Azul</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Azul</string>
+			<key>timeStartedRecording</key>
+			<real>612945585.99933398</real>
+			<key>timeStoppedRecording</key>
+			<real>612945586.70673704</real>
+			<key>title</key>
+			<string>Build Azul</string>
+			<key>uniqueIdentifier</key>
+			<string>8D088361-A0EE-445D-A0A8-D84CB9066786</string>
+		</dict>
+		<key>97458E05-2F85-4032-80AD-A9E913076360</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>97458E05-2F85-4032-80AD-A9E913076360.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Azul project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Azul</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Azul</string>
+			<key>timeStartedRecording</key>
+			<real>612945627.25463998</real>
+			<key>timeStoppedRecording</key>
+			<real>612945627.93427801</real>
+			<key>title</key>
+			<string>Build Azul</string>
+			<key>uniqueIdentifier</key>
+			<string>97458E05-2F85-4032-80AD-A9E913076360</string>
+		</dict>
+		<key>A1DBE82F-AABA-4508-BAE1-61E9593F114B</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>A1DBE82F-AABA-4508-BAE1-61E9593F114B.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Azul project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Azul</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Azul</string>
+			<key>timeStartedRecording</key>
+			<real>612945054.35775101</real>
+			<key>timeStoppedRecording</key>
+			<real>612945055.42655206</real>
+			<key>title</key>
+			<string>Build Azul</string>
+			<key>uniqueIdentifier</key>
+			<string>A1DBE82F-AABA-4508-BAE1-61E9593F114B</string>
+		</dict>
+		<key>ACAF774D-479C-4594-95DE-E0FB4E0D96A5</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>ACAF774D-479C-4594-95DE-E0FB4E0D96A5.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Azul project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Azul</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Azul</string>
+			<key>timeStartedRecording</key>
+			<real>612944989.79252994</real>
+			<key>timeStoppedRecording</key>
+			<real>612944991.00576794</real>
+			<key>title</key>
+			<string>Build Azul</string>
+			<key>uniqueIdentifier</key>
+			<string>ACAF774D-479C-4594-95DE-E0FB4E0D96A5</string>
+		</dict>
+		<key>B3F5AC84-9285-4FDE-917F-602CD7D42F69</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>B3F5AC84-9285-4FDE-917F-602CD7D42F69.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Azul project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Azul</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Azul</string>
+			<key>timeStartedRecording</key>
+			<real>612945116.78448296</real>
+			<key>timeStoppedRecording</key>
+			<real>612945117.86481905</real>
+			<key>title</key>
+			<string>Build Azul</string>
+			<key>uniqueIdentifier</key>
+			<string>B3F5AC84-9285-4FDE-917F-602CD7D42F69</string>
+		</dict>
+		<key>B5483487-E4D4-448B-8226-E38E73BA79FD</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>B5483487-E4D4-448B-8226-E38E73BA79FD.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Azul project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Azul</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Azul</string>
+			<key>timeStartedRecording</key>
+			<real>612945249.49307895</real>
+			<key>timeStoppedRecording</key>
+			<real>612945250.86706805</real>
+			<key>title</key>
+			<string>Build Azul</string>
+			<key>uniqueIdentifier</key>
+			<string>B5483487-E4D4-448B-8226-E38E73BA79FD</string>
+		</dict>
+		<key>BCA246D5-4636-48E8-848B-4331EFC29F76</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>BCA246D5-4636-48E8-848B-4331EFC29F76.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Azul project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Azul</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Azul</string>
+			<key>timeStartedRecording</key>
+			<real>612945255.57586002</real>
+			<key>timeStoppedRecording</key>
+			<real>612945256.23834503</real>
+			<key>title</key>
+			<string>Build Azul</string>
+			<key>uniqueIdentifier</key>
+			<string>BCA246D5-4636-48E8-848B-4331EFC29F76</string>
+		</dict>
+		<key>CACB4D18-FBCB-4B0E-9E16-722FEAEACBA2</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>CACB4D18-FBCB-4B0E-9E16-722FEAEACBA2.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Azul project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Azul</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Azul</string>
+			<key>timeStartedRecording</key>
+			<real>612943920.442307</real>
+			<key>timeStoppedRecording</key>
+			<real>612943923.12933505</real>
+			<key>title</key>
+			<string>Build Azul</string>
+			<key>uniqueIdentifier</key>
+			<string>CACB4D18-FBCB-4B0E-9E16-722FEAEACBA2</string>
+		</dict>
+		<key>D13A590B-2AD4-46F1-A3C5-AB641A6F4A5D</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>D13A590B-2AD4-46F1-A3C5-AB641A6F4A5D.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Azul project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Azul</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Azul</string>
+			<key>timeStartedRecording</key>
+			<real>612945592.40975106</real>
+			<key>timeStoppedRecording</key>
+			<real>612945593.11775696</real>
+			<key>title</key>
+			<string>Build Azul</string>
+			<key>uniqueIdentifier</key>
+			<string>D13A590B-2AD4-46F1-A3C5-AB641A6F4A5D</string>
+		</dict>
+		<key>E36BD230-194C-47E4-8066-A7FC4D650C44</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>E36BD230-194C-47E4-8066-A7FC4D650C44.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Azul project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Azul</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Azul</string>
+			<key>timeStartedRecording</key>
+			<real>612943813.08701098</real>
+			<key>timeStoppedRecording</key>
+			<real>612943815.25575304</real>
+			<key>title</key>
+			<string>Build Azul</string>
+			<key>uniqueIdentifier</key>
+			<string>E36BD230-194C-47E4-8066-A7FC4D650C44</string>
+		</dict>
+		<key>EAAAEE73-45B4-4864-A5AE-C54D3073B9CE</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>EAAAEE73-45B4-4864-A5AE-C54D3073B9CE.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Azul project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Azul</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Azul</string>
+			<key>timeStartedRecording</key>
+			<real>612945750.805632</real>
+			<key>timeStoppedRecording</key>
+			<real>612945751.56519997</real>
+			<key>title</key>
+			<string>Build Azul</string>
+			<key>uniqueIdentifier</key>
+			<string>EAAAEE73-45B4-4864-A5AE-C54D3073B9CE</string>
+		</dict>
+		<key>ED9F8A2D-8A75-4A0D-8D31-F9DD857BE5AF</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>ED9F8A2D-8A75-4A0D-8D31-F9DD857BE5AF.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Azul project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Azul</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Azul</string>
+			<key>timeStartedRecording</key>
+			<real>612945733.54878294</real>
+			<key>timeStoppedRecording</key>
+			<real>612945734.328825</real>
+			<key>title</key>
+			<string>Build Azul</string>
+			<key>uniqueIdentifier</key>
+			<string>ED9F8A2D-8A75-4A0D-8D31-F9DD857BE5AF</string>
+		</dict>
+		<key>F17146FD-3599-49B1-815F-821F81C3CA46</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>F17146FD-3599-49B1-815F-821F81C3CA46.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Azul project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Azul</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Azul</string>
+			<key>timeStartedRecording</key>
+			<real>612942856.89667702</real>
+			<key>timeStoppedRecording</key>
+			<real>612942860.10799396</real>
+			<key>title</key>
+			<string>Build Azul</string>
+			<key>uniqueIdentifier</key>
+			<string>F17146FD-3599-49B1-815F-821F81C3CA46</string>
 		</dict>
 	</dict>
 </dict>

@@ -40,7 +40,8 @@ void PlayGame::showPlayersBoard(int x)
         std::cout<<enumToDisplay(t);
     std::cout<<endl;
     std::string input;
-    std::cout << "\n> ";
+    std::cout<<"\nY:🟨 R:🟥 U:⬛️ L:🟩 B:🟦\n"<<std::endl;
+    std::cout<< "\n"<< players->at(x).getPlayerName() <<"> ";
     std::getline(cin, input);
     std::regex r("^turn\\s[012345]\\s[FRYBLU]\\s[12345]");
     std::regex s("^save");
@@ -70,11 +71,13 @@ void PlayGame::showPlayersBoard(int x)
         cout<<"usage:"<<endl;
         cout<<"turn <Factory Number> <tile> <storage number>"<< endl;
         cout<<"savegame <filename>"<<endl;
+        cin.ignore();
         
     }
     else 
     {
-        cout << "Invalid Input\n"; 
+        cout << "Invalid Input\n";
+        cin.ignore();
         showPlayersBoard(x);
     }
 
@@ -123,7 +126,7 @@ void PlayGame::play(bool newGame)
         Tree<PlayerBoard> *scoresCompare = new Tree<PlayerBoard>();
         for(PlayerBoard player :*players){
             player.endGameScoring();
-            scoresCompare->add(player, player.getfinalScores());
+            scoresCompare->insert(player, player.getfinalScores());
         }
 
     
