@@ -5,7 +5,6 @@
 #include "PlayerBoard.h"
 #include <fstream>
 #define FACTORY_NUM 6
-using namespace std;
 class PlayGame{
     public:
         PlayGame();

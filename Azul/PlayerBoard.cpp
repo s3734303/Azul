@@ -474,7 +474,8 @@ void PlayerBoard::endGameScoring() //Redefinition of 'endGameScoring'DONE
     int y = 0;
     int u = 0;
     int l = 0;
-    std::array<int,5> temp {r,b,y,u,l};
+    int c = 0;
+    std::array<int,6> temp {r,b,y,u,l,c};
    
     int total = 0;
 
@@ -490,7 +491,7 @@ void PlayerBoard::endGameScoring() //Redefinition of 'endGameScoring'DONE
             {
                 wallRowProgress++;
             }
-            if (wallRowProgress ==5)
+            if (wallRowProgress ==DIM)
             {
                 completedRows++;
             }
@@ -500,7 +501,7 @@ void PlayerBoard::endGameScoring() //Redefinition of 'endGameScoring'DONE
             {
                 wallColProgress++;
             }
-            if (wallRowProgress ==5)
+            if (wallRowProgress ==DIM)
             {
                 completedCols++;
             }
@@ -530,6 +531,10 @@ void PlayerBoard::endGameScoring() //Redefinition of 'endGameScoring'DONE
             {
                 l++;
             }
+            if (wall->at(i).at(j) == C)
+            {
+                c++;
+            }
             
         }
 
@@ -538,7 +543,7 @@ void PlayerBoard::endGameScoring() //Redefinition of 'endGameScoring'DONE
     //completed colour Checks
     for(int k=0; k<temp.size();k++) //Member reference base type 'int [5]' is not a structure or union DONE
     {
-        if (temp[k] == 5) //Use of undeclared identifier 'arr' DONE
+        if (temp[k] == DIM) //Use of undeclared identifier 'arr' DONE
         {
             completedColours++;
         }

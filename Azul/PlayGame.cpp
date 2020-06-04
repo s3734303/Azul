@@ -302,7 +302,7 @@ bool PlayGame::loadGame(string filename)
             getline(SaveGame, parse);
             if(parse =="#XtendMode")
                 extendMode=true;
-            if(parse == "#COMMENT"){
+            else if(parse == "#COMMENT"){
                 string str;
                 getline(SaveGame,str);
                 cout<<str<<endl;
@@ -311,19 +311,19 @@ bool PlayGame::loadGame(string filename)
                 getline(SaveGame, playerName);
             else if(parse == "#PLAYER_WALL"){
                 getline(SaveGame,wall_str);
-                if(wall_str.length()!=25)
+                if((wall_str.length()!=25 && !extendMode)||(wall_str.length()!=36 && extendMode))
                     throw 3;
             }
                 
             else if(parse == "#PLAYER_PILES"){
                 getline(SaveGame, pile_str);
-                if(pile_str.length()!=15)
+                if((pile_str.length()!=15&& !extendMode) || (pile_str.length()!=21 && extendMode))
                     throw 3;
             }
                 
             else if (parse == "#PLAYER_FLOORLINE"){
                 getline(SaveGame, floor_str);
-                if(floor_str.length()>6)
+                if(floor_str.length()>7)
                     throw 3;
                 for(char c : floor_str){
                     if(c=='F')
@@ -344,7 +344,7 @@ bool PlayGame::loadGame(string filename)
             else if(parse == "#PLAYER_END"){
                 if(playerName.empty() || pile_str.empty() || wall_str.empty())
                     throw 5;
-                players->push_back(PlayerBoard(playerName,false));
+                players->push_back(PlayerBoard(playerName,extendMode));
                 players->at(players->size()-1).loader(wall_str, pile_str, floor_str);
                 players->at(players->size()-1).setScore(score);
                 playerName.clear();
